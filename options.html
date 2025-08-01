@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 Pro - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { width: 600px; min-height: 500px; }
+        .settings-container { padding: 2rem; }
+        .setting-group { margin-bottom: 2rem; }
+        .setting-item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+        }
+        .setting-label { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 0.25rem; 
+        }
+        .setting-title { 
+            font-weight: 600; 
+            color: var(--text-primary); 
+        }
+        .setting-description { 
+            font-size: var(--text-sm); 
+            color: var(--text-muted); 
+        }
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background var(--transition-normal);
+        }
+        .toggle-switch.active {
+            background: var(--primary-color);
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform var(--transition-normal);
+        }
+        .toggle-switch.active::after {
+            transform: translateX(24px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cog"></i>
+                    <h1>Settings</h1>
+                </div>
+                <button id="backBtn" class="btn secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="settings-container">
+            <div class="setting-group">
+                <h3>General Settings</h3>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Auto-detect input type</div>
+                        <div class="setting-description">Automatically detect if input is Base64 or plain text</div>
+                    </div>
+                    <div class="toggle-switch active" data-setting="autoDetect"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Show character count</div>
+                        <div class="setting-description">Display character count below input field</div>
+                    </div>
+                    <div class="toggle-switch active" data-setting="showCharCount"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Keyboard shortcuts</div>
+                        <div class="setting-description">Enable keyboard shortcuts for quick actions</div>
+                    </div>
+                    <div class="toggle-switch active" data-setting="keyboardShortcuts"></div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <h3>Output Settings</h3>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Auto-copy on encode/decode</div>
+                        <div class="setting-description">Automatically copy result to clipboard</div>
+                    </div>
+                    <div class="toggle-switch" data-setting="autoCopy"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Format Base64 output</div>
+                        <div class="setting-description">Add line breaks to Base64 output for readability</div>
+                    </div>
+                    <div class="toggle-switch" data-setting="formatOutput"></div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <h3>Notifications</h3>
+                
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Show toast notifications</div>
+                        <div class="setting-description">Display popup notifications for actions</div>
+                    </div>
+                    <div class="toggle-switch active" data-setting="showToasts"></div>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Show status messages</div>
+                        <div class="setting-description">Display status messages in the main panel</div>
+                    </div>
+                    <div class="toggle-switch active" data-setting="showStatus"></div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <h3>About</h3>
+                <div class="setting-item">
+                    <div class="setting-label">
+                        <div class="setting-title">Base64 Encoder & Decoder Pro</div>
+                        <div class="setting-description">Version 2.0.0 - Enhanced Chrome Extension</div>
+                    </div>
+                    <button class="btn secondary" id="resetBtn">
+                        <i class="fas fa-undo"></i>
+                        <span>Reset Settings</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>

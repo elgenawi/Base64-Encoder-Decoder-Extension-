@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base64 Encoder & Decoder Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <h1>Base64 Pro</h1>
+                </div>
+                <div class="version">v2.0</div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-header">
+                    <label for="textInput" class="input-label">
+                        <i class="fas fa-edit"></i>
+                        Input Text
+                    </label>
+                    <div class="char-counter">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+                <div class="textarea-container">
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Enter your text here to encode or decode..."
+                        rows="6"
+                        spellcheck="false"
+                    ></textarea>
+                    <div class="textarea-actions">
+                        <button id="clearBtn" class="action-btn secondary" title="Clear text">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button id="pasteBtn" class="action-btn secondary" title="Paste from clipboard">
+                            <i class="fas fa-paste"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-section">
+                <div class="button-group">
+                    <button id="encodeBtn" class="btn primary">
+                        <i class="fas fa-lock"></i>
+                        <span>Encode</span>
+                    </button>
+                    <button id="decodeBtn" class="btn primary">
+                        <i class="fas fa-unlock"></i>
+                        <span>Decode</span>
+                    </button>
+                </div>
+                <div class="button-group">
+                    <button id="copyBtn" class="btn secondary">
+                        <i class="fas fa-copy"></i>
+                        <span>Copy</span>
+                    </button>
+                    <button id="selectAllBtn" class="btn secondary">
+                        <i class="fas fa-check-double"></i>
+                        <span>Select All</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status Messages -->
+            <div id="statusMessage" class="status-message hidden">
+                <div class="status-content">
+                    <i class="status-icon"></i>
+                    <span class="status-text"></span>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="output-header">
+                    <label class="output-label">
+                        <i class="fas fa-terminal"></i>
+                        Output
+                    </label>
+                    <div class="output-actions">
+                        <button id="formatBtn" class="action-btn secondary" title="Format output">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <button id="downloadBtn" class="action-btn secondary" title="Download as file">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="output-container">
+                    <pre id="outputText" class="output-text">Your encoded/decoded text will appear here...</pre>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Base64 Pro by Elgenawi. Enhanced version with modern design.</p>
+                <div class="footer-links">
+                    <button id="aboutBtn" class="link-btn">
+                        <i class="fas fa-info-circle"></i>
+                        About
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

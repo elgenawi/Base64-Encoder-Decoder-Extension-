@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Base64 Encoder & Decoder Pro",
+  "version": "2.0.0",
+  "description": "Modern Base64 encoder and decoder with beautiful UI. Encode/decode text, validate input, and copy results with one click.",
+  
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png", 
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  
+  "action": {
+    "default_title": "Base64 Encoder & Decoder Pro",
+    "default_popup": "popup.html",
+    "default_icon": "images/icon.png"
+  },
+  
+  "options_page": "options.html",
+  
+  "permissions": [
+    "clipboardWrite",
+    "storage",
+    "tabs"
+  ],
+  
+  "offline_enabled": true
+}
